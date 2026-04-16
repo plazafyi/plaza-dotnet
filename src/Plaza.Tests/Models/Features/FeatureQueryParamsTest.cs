@@ -239,11 +239,13 @@ public class FeatureQueryParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://plaza.fyi/api/v1/features?cursor=cursor&format=format&h3=h3&limit=0&type=type"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://plaza.fyi/api/v1/features?cursor=cursor&format=format&h3=h3&limit=0&type=type"
+                ),
+                url
+            )
         );
     }
 

@@ -22,7 +22,7 @@ public class OptimizeRetrieveParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://plaza.fyi/api/v1/optimize/job_id"), url);
+        Assert.True(TestBase.UrisEqual(new Uri("https://plaza.fyi/api/v1/optimize/job_id"), url));
     }
 
     [Fact]

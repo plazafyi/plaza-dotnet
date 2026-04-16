@@ -36,7 +36,7 @@ public class TileGetParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(new Uri("https://plaza.fyi/api/v1/tiles/0/0/0"), url);
+        Assert.True(TestBase.UrisEqual(new Uri("https://plaza.fyi/api/v1/tiles/0/0/0"), url));
     }
 
     [Fact]
