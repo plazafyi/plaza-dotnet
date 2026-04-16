@@ -110,11 +110,13 @@ public class SearchQueryParamsTest : TestBase
 
         var url = parameters.Url(new() { ApiKey = "My API Key" });
 
-        Assert.Equal(
-            new Uri(
-                "https://plaza.fyi/api/v1/search?q=q&cursor=cursor&format=format&limit=0&output%5bfields%5d=output%5bfields%5d&output%5binclude%5d=output%5binclude%5d&output%5bprecision%5d=0&output%5bsort%5d=output%5bsort%5d"
-            ),
-            url
+        Assert.True(
+            TestBase.UrisEqual(
+                new Uri(
+                    "https://plaza.fyi/api/v1/search?q=q&cursor=cursor&format=format&limit=0&output%5bfields%5d=output%5bfields%5d&output%5binclude%5d=output%5binclude%5d&output%5bprecision%5d=0&output%5bsort%5d=output%5bsort%5d"
+                ),
+                url
+            )
         );
     }
 
